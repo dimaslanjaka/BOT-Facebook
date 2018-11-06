@@ -6,7 +6,7 @@
 
 //--- single account
 $auth = array(
-"user	"	=> 'username',
+"user"	=> 'username',
 "pass" => 'password',
 "token" => "", //blank for auto get token
 "like_comments" => false, //true for autolike comments and replies
