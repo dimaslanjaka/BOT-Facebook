@@ -15,8 +15,8 @@ $auth = array(
 "token" => "", //blank for auto get token
 "like_comments" => false, //true for autolike comments and replies
  );
-//--- multiple account
-
+ //** OR **//
+//--- multiple accounts
 $auth = array(
  array(
  "user" => "username",
