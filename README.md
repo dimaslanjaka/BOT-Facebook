@@ -38,3 +38,5 @@ $auth = array(
  ),
 );
 ```
+
+### edit autoreaction.php for configure auto reaction/like of yourself
