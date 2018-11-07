@@ -40,3 +40,4 @@ $auth = array(
 ```
 
 ### edit autoreaction.php for configure auto reaction/like of yourself
+### installing cronjob on Termux, use cronjob_setup.sh
